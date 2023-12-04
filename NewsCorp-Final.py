@@ -156,12 +156,11 @@ class PlayerSummary:
     refined_summary_template = """In the summarized Document below, i want you to refine the summary further by:
 
     a) Being concise
-    b) mention all numbers in numerical format
-    c) Focussing on on-field performances 
-    d) Excluding generic information
-    e) Excluding information that cant be quantified
-    f) Excluding any conclusions
-    g) Excluding any suggestion
+    b) Focussing on on-field performances 
+    c) Excluding generic information
+    d) Excluding information that cant be quantified
+    e) Excluding any conclusions
+    f) Excluding any suggestion
 
     Document: {refined_summary}
 
