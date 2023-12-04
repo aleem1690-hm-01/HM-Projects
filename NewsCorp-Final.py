@@ -135,7 +135,7 @@ class PlayerSummary:
     a) read the given document which contains summaries from multiple articles
     b) if the document is empty, return output as "No data available"
     b) Exclude all opinions and suggestions from other people. Focus only on facts.
-    c) consolidate & provide an overall summary in the "Output Examples" format for {mvp_player_name} and above "Requirements".
+    c) consolidate & provide an overall brief summary in the "Output Examples" format for {mvp_player_name} and above "Requirements".
     d) The summary should be very concise and brief, and exclude any conclusions.
     e) The summary should be specific to player's on-field numbers and scores
     f) Give the summary as a paragraph and not as bullet points.
