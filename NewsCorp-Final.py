@@ -137,7 +137,7 @@ class PlayerSummary:
     b) Exclude all opinions and suggestions from other people. Focus only on facts.
     c) consolidate & provide an overall summary in the "Output Examples" format for {mvp_player_name} and above "Requirements".
     d) The summary should be specific to player's on-field numbers and scores.
-    e) The summary should be maximum 30 words.
+    e) The summary should be very concise and brief.
     f) Give the summary as a paragraph and not as bullet points.
     g) dont mention details of any other player unless it impacts the selecton of {mvp_player_name} 
     h) Dont give any of your conclusions or remarks based on summary
@@ -151,14 +151,33 @@ class PlayerSummary:
 
     summary_chain = LLMChain(llm=model, prompt=summary_prompt)
 
-    final_summary = summary_chain.run(doc_summaries=summary_docs,mvp_player_name=mvp_player_name)
+    summary = summary_chain.run(doc_summaries=summary_docs,mvp_player_name=mvp_player_name)
+
+    refined_summary_template = """In the summarized Document below, i want you to refine the summary further by:
+
+    a) Being concise
+    b) Focussing on on-field performances 
+    c) Excluding generic information
+    d) Excluding information that cant be quantified
+    e) Excluding any conclusions
+    f) Excluding any suggestion
+
+    Document: {refined_summary}
+
+    Output:    
+    """
+    refined_summary_prompt = PromptTemplate.from_template(refined_summary_template)
+
+    refined_summary_chain = LLMChain(llm=model, prompt=refined_summary_prompt)
+
+    final_summary = refined_summary_chain.run(refined_summary=summary)
 
     return final_summary
 
 def main(mvp_player_name, tags):
   
   st.write(f"Player Name: {mvp_player_name}")
-  st.write(f"Tags: {tags}")
+  st.write(f"Search Criteria": {tags}")
   # mvp_player_name = "Christian Petracca"
   # tags = "AFL scores performance"
   player = PlayerSummary(mvp_player_name,tags)
