@@ -178,8 +178,11 @@ if __name__ == "__main__":
 
   # mvp_player_name = "Christian Petracca"
   # tags = "AFL scores performance"
-  player = PlayerSummary(mvp_player_name,tags)
-  summary = player.get_final_summary()
+  # player = PlayerSummary(mvp_player_name,tags)
+  # summary = player.get_final_summary()
+
+  if st.button("Submit"):
+    main(mvp_player_name, tags)
 
   print('read summary from main function')
-  summary
+  # summary
