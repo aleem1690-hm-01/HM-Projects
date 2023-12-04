@@ -42,7 +42,7 @@ class PlayerSummary:
     # print(mvp_player_name)
     search = GoogleSerperAPIWrapper(type="news",tbs="qdr:m6")
     search_term = mvp_player_name + " recent " + tags
-    st.write(search_term)
+    # st.write(search_term)
     results = search.results(search_term)
     
     href_list = []
@@ -169,7 +169,7 @@ if __name__ == "__main__":
   # Input for entering Player Name
   mvp_player_name = st.text_input("Enter Player Name")
   # Radio button for selecting League
-  league_options = ['AFL', 'NBL', 'BBL']
+  league_options = ['AFL','BBL','NBL','NRL']
   selected_league = st.radio("League", league_options)
 
   # Input for entering Search Tags
