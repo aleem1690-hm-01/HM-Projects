@@ -3,3 +3,4 @@ tiktoken
 chromadb
 langchain
 streamlit
+bs4
