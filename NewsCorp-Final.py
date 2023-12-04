@@ -93,7 +93,7 @@ class PlayerSummary:
       count = str(idx+1)
       docs = loader.load()
       docs_dict = dict(docs[0])
-      no_tokens = num_tokens_from_string(docs_dict["page_content"],"cl100k_base")
+      no_tokens = self.num_tokens_from_string(docs_dict["page_content"],"cl100k_base")
       if no_tokens<16000:
         summary = chain.run(mvp_player_name=mvp_player_name,input_documents=docs)
         summary_docs = summary_docs +'\nSummary Number '+count+':\n'+summary
@@ -158,8 +158,8 @@ def main():
   # tags = "AFL scores performance"
   # player = PlayerSummary(mvp_player_name,tags)
   # summary = player.get_final_summary()
-  print("Player Summary is:"+'\n'+summary)
-  return summary
+  # print("Player Summary is:"+'\n'+summary)
+  # return summary
 
 if __name__ == "__main__":
   # Set title of the page
