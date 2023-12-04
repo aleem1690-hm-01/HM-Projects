@@ -176,8 +176,8 @@ if __name__ == "__main__":
   # Concatenate player name and search tags
   tags = f"League: {selected_league}, Tags: {search_tags}"
 
-  mvp_player_name = "Christian Petracca"
-  tags = "AFL scores performance"
+  # mvp_player_name = "Christian Petracca"
+  # tags = "AFL scores performance"
   player = PlayerSummary(mvp_player_name,tags)
   summary = player.get_final_summary()
 
