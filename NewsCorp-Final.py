@@ -154,10 +154,10 @@ def main():
   
   st.write(f"Player Name: {mvp_player_name}")
   st.write(f"Tags: {tags}")
-  mvp_player_name = "Christian Petracca"
-  tags = "AFL scores performance"
-  player = PlayerSummary(mvp_player_name,tags)
-  summary = player.get_final_summary()
+  # mvp_player_name = "Christian Petracca"
+  # tags = "AFL scores performance"
+  # player = PlayerSummary(mvp_player_name,tags)
+  # summary = player.get_final_summary()
   print("Player Summary is:"+'\n'+summary)
   return summary
 
@@ -175,6 +175,11 @@ if __name__ == "__main__":
 
   # Concatenate player name and search tags
   tags = f"League: {selected_league}, Tags: {search_tags}"
-  summary = main()
+
+  mvp_player_name = "Christian Petracca"
+  tags = "AFL scores performance"
+  player = PlayerSummary(mvp_player_name,tags)
+  summary = player.get_final_summary()
+
   print('read summary from main function')
   summary
