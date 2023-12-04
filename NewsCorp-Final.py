@@ -16,11 +16,16 @@ from langchain.document_loaders import WebBaseLoader
 import tiktoken
 
 #Updating the server key for google search
-os.environ["SERPER_API_KEY"] = "b428c3270564754f69383922cd85763cb7b79533"
+# os.environ["SERPER_API_KEY"] = "b428c3270564754f69383922cd85763cb7b79533"
+os.environ["SERPER_API_KEY"] = st.secrets["SERPER_API_KEY"]
 
 #Updating the Azure open Api Key & End Point for model
-os.environ["AZURE_OPENAI_API_KEY"] = 'f7e330db85eb4ca5855620ca2656871e'
-os.environ["AZURE_OPENAI_ENDPOINT"] = 'https://openaitrials.openai.azure.com/'
+# os.environ["AZURE_OPENAI_API_KEY"] = 'f7e330db85eb4ca5855620ca2656871e'
+# os.environ["AZURE_OPENAI_ENDPOINT"] = 'https://openaitrials.openai.azure.com/'
+
+
+os.environ["AZURE_OPENAI_API_KEY"] = st.secrets["AZURE_OPENAI_API_KEY"]
+os.environ["AZURE_OPENAI_ENDPOINT"] = st.secrets["AZURE_OPENAI_ENDPOINT"]
 
 class PlayerSummary:
   def __init__(self,mvp_player_name,tags):
