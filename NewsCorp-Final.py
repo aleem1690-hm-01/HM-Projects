@@ -111,7 +111,9 @@ class PlayerSummary:
     
     summary_docs = self.get_individual_summary()
     summary_template = """
+    
     I am building a team in fantasy application and looking to select players based on
+
     Requirements:
     a) Recent performances
     b) form, skills, abilities
@@ -136,6 +138,7 @@ class PlayerSummary:
     h) Dont give any of your conclusions or remarks based on summary
     
     Document: {doc_summaries}
+
     Output:"""
 
     summary_prompt = PromptTemplate.from_template(summary_template)
@@ -147,47 +150,36 @@ class PlayerSummary:
 
     return final_summary
 
-def main():
-  st.title("NewsCorp Player Summary")
-  st.write(f"Player Name: {mvp_player_name}")
-  mvp_player_name = st.text_input("Enter Player Name")
-  st.write(f"Tags: {tags}")
-  league_options = ['AFL', 'NBL', 'BBL']
-  selected_league = st.radio("League", league_options)
-  search_tags = st.text_input("Enter Search Tags")
-
-  tags = f"League: {selected_league}, Tags: {search_tags}"
-
-  player = PlayerSummary(mvp_player_name,tags)
-  summary = player.get_final_summary()
+def main(mvp_player_name, tags):
   
+  st.write(f"Player Name: {mvp_player_name}")
+  st.write(f"Tags: {tags}")
   # mvp_player_name = "Christian Petracca"
   # tags = "AFL scores performance"
-  # player = PlayerSummary(mvp_player_name,tags)
-  # summary = player.get_final_summary()
-  # print("Player Summary is:"+'\n'+summary)
+  player = PlayerSummary(mvp_player_name,tags)
+  summary = player.get_final_summary()
+  print("Player Summary is:"+'\n'+summary)
   return summary
 
 if __name__ == "__main__":
-  main()
   # Set title of the page
-  # st.title("NewsCorp Player Summary")
+  st.title("NewsCorp Player Summary")
   # Input for entering Player Name
-  # mvp_player_name = st.text_input("Enter Player Name")
+  mvp_player_name = st.text_input("Enter Player Name")
   # Radio button for selecting League
-  # league_options = ['AFL', 'NBL', 'BBL']
-  # selected_league = st.radio("League", league_options)
+  league_options = ['AFL', 'NBL', 'BBL']
+  selected_league = st.radio("League", league_options)
 
   # Input for entering Search Tags
-  # search_tags = st.text_input("Enter Search Tags")
+  search_tags = st.text_input("Enter Search Tags")
 
   # Concatenate player name and search tags
-  # tags = f"League: {selected_league}, Tags: {search_tags}"
+  tags = f"League: {selected_league}, Tags: {search_tags}"
 
   # mvp_player_name = "Christian Petracca"
   # tags = "AFL scores performance"
-  # player = PlayerSummary(mvp_player_name,tags)
-  # summary = player.get_final_summary()
+  player = PlayerSummary(mvp_player_name,tags)
+  summary = player.get_final_summary()
 
   print('read summary from main function')
-  # summary
+  summary
