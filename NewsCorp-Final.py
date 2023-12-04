@@ -155,7 +155,7 @@ class PlayerSummary:
     refined_summary_template = """In the summarized Document below, i want you to refine the summary further by:
 
     a) Being concise
-    b) Highlighting on on-field performances 
+    b) Highlighting & listing the on-field performances 
     c) Excluding generic information
     d) Excluding information that cant be quantified
     e) Excluding any conclusions
