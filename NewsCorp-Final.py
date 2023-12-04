@@ -142,7 +142,7 @@ class PlayerSummary:
     Output:"""
 
     summary_prompt = PromptTemplate.from_template(summary_template)
-    summary_prompt
+    # summary_prompt
 
     summary_chain = LLMChain(llm=model, prompt=summary_prompt)
 
