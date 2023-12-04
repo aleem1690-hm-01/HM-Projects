@@ -177,7 +177,7 @@ class PlayerSummary:
 def main(mvp_player_name, tags):
   
   st.write(f"Player Name: {mvp_player_name}")
-  st.write(f"Search Criteria": {tags}")
+  st.write(f"Search Criteria: {tags}")
   # mvp_player_name = "Christian Petracca"
   # tags = "AFL scores performance"
   player = PlayerSummary(mvp_player_name,tags)
