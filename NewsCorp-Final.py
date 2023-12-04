@@ -176,7 +176,8 @@ if __name__ == "__main__":
   search_tags = st.text_input("Enter Search Tags")
 
   # Concatenate player name and search tags
-  tags = f"League: {selected_league}, Tags: {search_tags}"
+  #tags = f"League: {selected_league}, ags: {search_tags}"
+  tags = selected_league+ " " + search_tags
 
   # mvp_player_name = "Christian Petracca"
   # tags = "AFL scores performance"
