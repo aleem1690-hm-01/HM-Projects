@@ -42,7 +42,7 @@ class PlayerSummary:
     # print(mvp_player_name)
     search = GoogleSerperAPIWrapper(type="news",tbs="qdr:m6")
     search_term = mvp_player_name + " recent " + tags
-    print(search_term)
+    st.write(search_term)
     results = search.results(search_term)
     
     href_list = []
@@ -159,6 +159,8 @@ def main(mvp_player_name, tags):
   player = PlayerSummary(mvp_player_name,tags)
   summary = player.get_final_summary()
   print("Player Summary is:"+'\n'+summary)
+  st.write("Player Summary is:")
+  st.write(summary)
   return summary
 
 if __name__ == "__main__":
