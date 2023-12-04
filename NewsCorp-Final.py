@@ -137,7 +137,7 @@ class PlayerSummary:
     b) Exclude all opinions and suggestions from other people. Focus only on facts.
     c) consolidate & provide an overall summary in the "Output Examples" format for {mvp_player_name} and above "Requirements".
     d) The summary should be specific to player's on-field numbers and scores.
-    e) The summary should be maximum 4 sentences.
+    e) The summary should be maximum 30 words.
     f) Give the summary as a paragraph and not as bullet points.
     g) dont mention details of any other player unless it impacts the selecton of {mvp_player_name} 
     h) Dont give any of your conclusions or remarks based on summary
