@@ -169,6 +169,7 @@ def main():
   return summary
 
 if __name__ == "__main__":
+  main()
   # Set title of the page
   # st.title("NewsCorp Player Summary")
   # Input for entering Player Name
