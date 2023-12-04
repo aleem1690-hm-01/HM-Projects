@@ -97,7 +97,7 @@ class PlayerSummary:
       if no_tokens<16000:
         summary = chain.run(mvp_player_name=mvp_player_name,input_documents=docs)
         summary_docs = summary_docs +'\nSummary Number '+count+':\n'+summary
-        print('article no:'+count+'\n'+summary)
+        # print('article no:'+count+'\n'+summary)
       else:
         print("skipped article no:"+count+" due to tokens exceeding :"+str(no_tokens))
 
@@ -158,7 +158,7 @@ def main(mvp_player_name, tags):
   # tags = "AFL scores performance"
   player = PlayerSummary(mvp_player_name,tags)
   summary = player.get_final_summary()
-  print("Player Summary is:"+'\n'+summary)
+  # print("Player Summary is:"+'\n'+summary)
   st.write("Player Summary is:")
   st.write(summary)
   return summary
@@ -187,5 +187,5 @@ if __name__ == "__main__":
   if st.button("Submit"):
     main(mvp_player_name, tags)
 
-  print('read summary from main function')
+  # print('read summary from main function')
   # summary
