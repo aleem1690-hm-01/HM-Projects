@@ -140,7 +140,6 @@ class PlayerSummary:
     e) The summary should be very concise and brief.
     f) Give the summary as a paragraph and not as bullet points.
     g) dont mention details of any other player unless it impacts the selecton of {mvp_player_name} 
-    h) Dont give any of your conclusions or remarks based on summary
     
     Document: {doc_summaries}
 
@@ -160,7 +159,7 @@ class PlayerSummary:
     c) Excluding generic information
     d) Excluding information that cant be quantified
     e) Excluding any conclusions
-    f) Excluding any suggestion
+    f) Excluding any suggestion & remarks
 
     Document: {refined_summary}
 
