@@ -171,7 +171,24 @@ class PlayerSummary:
 
     final_summary = refined_summary_chain.run(refined_summary=summary)
 
-    return final_summary
+    bullet_summary_template = """In the list of summaries, i want you to create a list of 
+    3 important news based on {mvp_player_name} from the summaries:
+
+    a) Make the above list very concise and brief 
+    b) Excluding any conclusions from list
+    c) Excluding any suggestion from list
+
+    summaries: {doc_summaries}
+
+    Output:    
+    """
+    bullet_summary_prompt = PromptTemplate.from_template(bullet_summary_template)
+
+    bullet_summary_chain = LLMChain(llm=model, prompt=bullet_summary_prompt)
+
+    bullet_summary = bullet_summary_chain.run(doc_summaries=summary_docs,mvp_player_name=mvp_player_name)
+
+    return final_summary, bullet_summary
 
 def main(mvp_player_name, tags):
   
@@ -180,10 +197,12 @@ def main(mvp_player_name, tags):
   # mvp_player_name = "Christian Petracca"
   # tags = "AFL scores performance"
   player = PlayerSummary(mvp_player_name,tags)
-  summary = player.get_final_summary()
-  # print("Player Summary is:"+'\n'+summary)
+  overall_summary, bullet_summary = player.get_final_summary()
+  # print("Player Summary is:"+'\n'+overall_summary)
   st.write("Player Summary is:")
   st.write(summary)
+  st.write("Key News:")
+  st.write(bullet_summary)
   return summary
 
 if __name__ == "__main__":
