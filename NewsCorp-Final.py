@@ -200,7 +200,7 @@ def main(mvp_player_name, tags):
   overall_summary, bullet_summary = player.get_final_summary()
   # print("Player Summary is:"+'\n'+overall_summary)
   st.write("Player Summary is:")
-  st.write(summary)
+  st.write(overall_summary)
   st.write("Key News:")
   st.write(bullet_summary)
   return summary
