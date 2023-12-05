@@ -203,7 +203,7 @@ def main(mvp_player_name, tags):
   st.write(overall_summary)
   st.write("Key News:")
   st.write(bullet_summary)
-  return summary
+  return overall_summary, bullet_summary
 
 if __name__ == "__main__":
   # Set title of the page
