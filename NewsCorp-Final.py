@@ -176,7 +176,7 @@ class PlayerSummary:
 def main(mvp_player_name, tags):
   
   st.write(f"Player Name: {mvp_player_name}")
-  st.write(f"Search Criteria: {tags}")
+  st.write(f"Search Criteria: {[selected_league,",",tags]}")
   # mvp_player_name = "Christian Petracca"
   # tags = "AFL scores performance"
   player = PlayerSummary(mvp_player_name,tags)
@@ -193,14 +193,14 @@ if __name__ == "__main__":
   mvp_player_name = st.text_input("Enter Player Name")
   # Radio button for selecting League
   league_options = ['AFL','BBL','NBL','NRL']
-  selected_league = '''"'''+st.radio("League", league_options)+'''"'''
+  selected_league = st.radio("League", league_options)
 
   # Input for entering Search Tags
   search_tags = st.text_input("Enter Search Tags")
 
   # Concatenate player name and search tags
   #tags = f"League: {selected_league}, ags: {search_tags}"
-  tags = selected_league+ " " + search_tags
+  tags = '''"'''+selected_league+'''", ''' + search_tags
 
   # mvp_player_name = "Christian Petracca"
   # tags = "AFL scores performance"
