@@ -211,7 +211,7 @@ if __name__ == "__main__":
   # Input for entering Player Name
   mvp_player_name = st.text_input("Enter Player Name")
   # Radio button for selecting League
-  league_options = ['AFL','BBL','NBL','NRL']
+  league_options = ['AFL','MLB','NBA']
   selected_league = st.radio("League", league_options)
 
   # Input for entering Search Tags
