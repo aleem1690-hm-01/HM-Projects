@@ -23,15 +23,23 @@ os.environ["SERPER_API_KEY"] = st.secrets["SERPER_API_KEY"]
 # os.environ["AZURE_OPENAI_API_KEY"] = 'f7e330db85eb4ca5855620ca2656871e'
 # os.environ["AZURE_OPENAI_ENDPOINT"] = 'https://openaitrials.openai.azure.com/'
 
+# os.environ["AZURE_OPENAI_API_KEY"] = st.secrets["AZURE_OPENAI_API_KEY"]
+# os.environ["AZURE_OPENAI_ENDPOINT"] = st.secrets["AZURE_OPENAI_ENDPOINT"]
 
-os.environ["AZURE_OPENAI_API_KEY"] = st.secrets["AZURE_OPENAI_API_KEY"]
-os.environ["AZURE_OPENAI_ENDPOINT"] = st.secrets["AZURE_OPENAI_ENDPOINT"]
+os.environ["AZURE_OPENAI_API_KEY"] = 'b47c4af29fea4f1d811374657edf2ee0'
+os.environ["AZURE_OPENAI_ENDPOINT"] = 'https://ccbss-ccc-transcripts.openai.azure.com/'
 
 class PlayerSummary:
   def __init__(self,mvp_player_name,tags):
     model = AzureChatOpenAI(
                     azure_deployment='gpt35turbo16kdep2',
                     openai_api_version="2023-07-01-preview",
+                    openai_api_type="azure",
+                    )
+
+    model = AzureChatOpenAI(
+                    azure_deployment='CCC-Transcripts-gpt-35-turbo-16k',
+                    openai_api_version="2023-08-01-preview",
                     openai_api_type="azure",
                     )
 
